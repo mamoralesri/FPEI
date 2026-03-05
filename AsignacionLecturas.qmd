@@ -1,0 +1,80 @@
+---
+title: "Estadística en acción: Asignación de lecturas" 
+format: pdf
+---
+
+## ¿Por qué estudiar estadística? 
+
+¡Bienvenidos al fascinante mundo de la estadística! Más que una rama de las matemáticas, la estadística es el lenguaje universal de la ciencia y la herramienta más poderosa que existe para navegar en la era de la información.
+
+En un mundo inundado de datos, la capacidad de recolectar, analizar e interpretar información de manera rigurosa es lo que marca la diferencia entre una suposición y un descubrimiento. Su aplicación no conoce límites:
+
+En la Ciencia: Es el motor que permite validar nuevos medicamentos, entender el cambio climático o descifrar el genoma humano.
+
+En los Negocios y la Industria: Permite a las empresas predecir tendencias del mercado, optimizar procesos de producción y tomar decisiones estratégicas basadas en evidencia, no en intuiciones.
+
+En la Tecnología: Es la base de la inteligencia artificial, los algoritmos de recomendación y el desarrollo de ciudades inteligentes.
+
+Al estudiar estadística, están adquiriendo la habilidad de "hacer hablar a los datos". Se convertirán en detectives de la realidad, capaces de encontrar patrones donde otros solo ven caos y de aportar soluciones precisas a los problemas más complejos de nuestra sociedad.
+
+## Lectura 
+
+La actividad consiste en leer un capítulo del documento `Estadística en acción`, teniendo en cuanta la siguiente guía de lectura. 
+
+1. El Problema y el Contexto
+  a. ¿Cuál es la pregunta central? 
+  b. Identifica el problema o la duda que los autores intentan resolver.
+  c. ¿Qué es lo que no se sabía antes de hacer este estudio?
+
+  d. ¿Por qué es importante? Describe por qué vale la pena gastar tiempo y recursos en investigar este tema específico.
+  e. ¿A quién beneficia la respuesta?
+
+2. Metodología (El "Cómo")
+  a. ¿Quiénes o qué son los sujetos de estudio?
+  b. Identifica la población o el conjunto de objetos (sensores, personas, animales, registros) de donde se obtiene la información.
+  c. ¿Qué variables se están observando? Sin entrar en fórmulas, enumera qué características se están midiendo (por ejemplo: tiempo, cantidad de un gas, peso, opinión).
+
+d. ¿Cómo se recolectaron los datos? Describe el proceso físico o digital: ¿fue una encuesta, un experimento en laboratorio, o se usaron bases de datos ya existentes?
+
+3. Análisis y Solución
+  a. ¿Qué obstáculos encontraron? Identifica si los autores mencionan problemas con los datos (datos faltantes, errores de medición, ruido) y menciona de forma general cómo intentaron corregirlos.
+  b. ¿Qué herramientas se usaron? Menciona si se apoyaron en software (como R o Python) o en modelos específicos para organizar la información.
+
+4. Conclusiones e Impacto. 
+  a. ¿Cuál fue el hallazgo principal? En tus propias palabras, resume la respuesta a la pregunta inicial.
+  b. ¿Qué acciones se pueden tomar ahora? Según los autores, ¿cómo debería cambiar la realidad o la industria gracias a estos resultados?
+
+c. ¿Qué nuevas dudas surgieron? Todo buen estudio suele terminar con nuevas preguntas. 
+
+d. ¿Qué sugieren los autores investigar a futuro?
+
+
+```{r}
+#| echo: false
+library(readxl)
+lista <- read_excel("~/Documents/Cursos/FPEI/ListaOficial.xlsx")
+lista$`Dirección de correo`=NULL
+lista$Grupos=NULL
+##head(lista)
+capitulos=4:16
+nestud=nrow(lista) 
+Lectura1=numeric(0)
+Lectura2=numeric(0)
+for(i in 1:nestud){
+sel=sample(capitulos,2,replace=FALSE)
+Lectura1[i]=sel[1]
+Lectura2[i]=sel[2]
+}
+asignacion=data.frame(Nombres=lista$Nombre,Apellidos=lista$`Apellido(s)`,Lectura1=Lectura1,Lectura2=Lectura2)
+```
+
+```{r}
+#| echo: false
+library(knitr)
+kable(asignacion)
+```
+
+## Evaluación 
+
+La evaluación de la lectura se hará mediante una prueba de comprensión lectora, que se hará mediante un cuestionario en Cintia.
+
