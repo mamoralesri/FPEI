@@ -1,0 +1,137 @@
+---
+title: "Histograma- Ejemplo realizado en clase"
+author: "Mario Morales"
+format: pdf
+---
+
+# Presentación de datos cuantitativos
+
+
+## Histograma 
+
+
+
+## Distribuciones de frecuencias 
+
+La distribución de frecuencia es una tabla que divide un conjunto de datos en un número de clases o categorías apropiadas, mostrando
+también el número de elementos de la case. La tabla sacrifica parte de la información contenida en los datos; en lugar de
+conocer el valor exacto del elemento, solo sabemos que pertenece a
+una clase determinada. Por otra parte, este tipo de agrupamiento hace resaltar características importantes de los datos.
+
+El procedimiento para construir una tabla de frecuencia es el siguiente:
+
+* Se establece cierto número de clases (intervalos) para agrupar los valores observados. En general,  el número de
+clases que usemos depende del número de observaciones, pero tiene muy poca utilidad usar menos de 5 o mas de 15. Para unificar
+criterios usaremos la siguiente formula empírica para determinar
+el número de clases $$K\approx1+3.3\log(n)$$ donde $K$ es el
+número de clases, $\log$ es el logaritmo en base 10 y $n$ es el
+número de datos. 
+
+* Se obtiene el rango o amplitud $(R)$, que es la diferencia
+entre el valor mas grande y el más pequeño.
+* Se define el ancho de clase dividiendo el rango entre el
+número de clases, $A=R/K$.
+* El limite inferior del primer intervalo (clase) es el menor de los datos, el
+limite superior del primer intervalo se obtiene sumando al dato
+menor el ancho de clase. El segundo intervalo se obtiene sumando
+el ancho de clase al limite superior del primero y así
+sucesivamente.
+* A cada clase se hace corresponder el número de observaciones
+incluidas en ellas, el cual constituye la frecuencia de clase.
+
+
+### Ejemplo 
+
+La demanda diaria, en kilogramos, de un producto industrial durante 30 días se muestran en la tabla -@tbl-datos
+
+```{r}
+#| echo: false
+#| label: tbl-datos
+#| tbl-cap: Demanda diaria durante 30 días
+
+ demanda=c(38 , 35,  76  ,58 , 48 , 59,
+ 67 , 63,  33,  69,  53,  51,
+ 28 , 25 , 36 , 32 , 61 , 57  ,
+  49,  78 , 48 , 42 , 72 , 52,
+ 47 , 66,  58 , 44 , 44 , 56)
+library(knitr)
+kable(matrix(demanda,6,5)) 
+```
+
+
+
+Construir una tabla que contenga la distribución de frecuencia
+relativa y frecuencia relativa acumulada.
+
+
+
+* Determinamos el número de clases mediante la formula $$1+3.3\log(30)=5.8745\approx6=K$$
+* Se obtiene el rango o amplitud $R=78-25=53$
+* Se obtiene el ancho de clase dividiendo la amplitud entre el número de
+clases
+así: $A=53/6=8.83$
+* El limite inferior de la primera clase es el menor de los datos (25), para
+obtener
+el limite superior de la primera clase, al dato menor se le suma
+el ancho de clase: $25+8.83=33.83$ de esa forma la primera clase
+es $[25 - 33.83)$. El limite inferior de la segunda clase es el
+superior de la primera y el superior es: $33.83+8.83=42.66$ así
+que la segunda clase es $[33.83 - 42.66)$ con ese procedimiento se
+continua hasta agotar las seis clases. Se debe tener en cuenta que
+el limite superior de la última clase es el mayor de los datos.
+* Una vez se tienen todas las clases se cuenta el número de
+datos que pertenecen a cada intervalo.
+
+
+El código R para estos cálculos se muestra a continuación. 
+
+```{r}
+demanda=c(38 , 35,  76  ,58 , 48 , 59,
+ 67 , 63,  33,  69,  53,  51,
+ 28 , 25 , 36 , 32 , 61 , 57  ,
+  49,  78 , 48 , 42 , 72 , 52,
+ 47 , 66,  58 , 44 , 44 , 56) # <1> 
+n=length(demanda) #<2>
+K=ceiling(1+3.3*log10(n)) #<3>
+R=max(demanda)-min(demanda) # <4> 
+A=R/K # <5>
+```
+1. Lectura de los datos
+2. Número de datos
+3. Número de intervalos de clase
+4. Rango 
+5. Ancho de cada intervalo. 
+
+Con `r n` datos, debemos usar `r K` intervalos, ya que el rango es `r R` el ancho de cada intervalo es `r round(A,2)`.  
+
+```{r}
+#| label: tbl-freq
+#| tbl-cap: Tabla de frecuencias  object
+library(agricolae)
+lims=seq(min(demanda),max(demanda),length=7)
+histo=hist(demanda,breaks=lims,plot=FALSE)
+kable(table.freq(histo))
+```
+
+
+La tabla de frecuencias se muestra en la tabla -@tbl-freq
+
+
+
+## Representación Gráfica
+
+La forma más común de representar una distribución de frecuencias
+es el histograma. Para construir el histograma de una distribución
+de frecuencia se colocan los intervalos de clase en el eje
+horizontal de un plano cartesiano y sobre estos se dibujan
+rectángulos cuyas alturas son las frecuencias de clase.
+
+```{r}
+#| label: fig-histodrama
+#| fig-cap: Distribución de la demanda diaria
+
+plot(histo) 
+ 
+```
+
+
