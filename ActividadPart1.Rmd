@@ -1,0 +1,422 @@
+---
+title: ""
+author: ""
+date: ''
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+set.seed(1234567)
+```
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+TALLER DE FPE-I (1) 
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.10,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,8,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza `r #round( var(x),2)` e) La desviación estándar `r #round( sd(x),2)`. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  `r #round( mean(x),2)`  b) La varianza de estos datos es:`r # round( var(x),2)` ____  c) La desviación estándar es: ____`r #round( sd(x),2)` 
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: `r #round( a^2*var(x),2)` ____   
+
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+TALLER DE FPE-I (2) 
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____  
+
+
+\vspace{5cm}
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+TALLER DE FPE-I (3) 
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____   
+
+
+
+\vspace{3cm}
+
+
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+TALLER DE FPE-I (4) 
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____  
+
+
+
+\vspace{5cm}
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+EVALUACION 1 DE FPE-I
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____   
+
+
+
+\vspace{3cm}
+
+
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+EVALUACION 1 DE FPE-I
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____  
+
+\vspace{5cm}
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+EVALUACION 1 DE FPE-I
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____   
+
+
+
+\vspace{3cm}
+
+
+
+
+\begin{center}
+DEPARTAMENTO DE MATEMATICAS 
+
+PROGRAMA DE ESTADISTICA 
+
+EVALUACION 1 DE FPE-I
+\end{center}
+
+Nombre del estudiante: _____________________ Fecha `r paste( substr(date(),5,10), substr(date(),21,30))`
+
+
+
+1. A partir de los datos de la siguiente tabla calcule 
+
+```{r , echo=FALSE}
+n=sample(seq(10,16,2),1)
+p=sample(seq(0.50,0.98,0.02),1)
+## parametro de la binomial 
+m=sample(seq(3,6,1),1) 
+x=rbinom(n,size = m,prob = p) 
+```
+
+```{r , echo=FALSE}
+kable(matrix(x,nrow = 2))
+```
+
+a) La media ______  `r #round( mean(x),2)`  b) La mediana _____  `r #median (x)` c) El primer cuartil  _____  `r #quantile(x)[2]` g) El tercer cuartil  _____  `r #quantile(x)[4]` 
+d) la varianza e) La desviación estándar. 
+
+
+
+```{r , echo=FALSE}
+n=sample(seq(16,22,2),1)
+p=sample(seq(0.15,0.95,0.05),1)
+## parametro de la binomial 
+m=sample(seq(10,20,2),1)
+x=rbinom(n,size = m,prob = p)
+a=sample(2:8,1) 
+b=sample(1.5:8.5,1)
+```
+
+2. Se tiene un conjunto de `r n` datos de los cuales se sabe que \(\sum_1^{`r n`} y_i= `r sum(x)`\) y \(\sum_1^{`r n`} y^2_i= `r sum(x^2)`\) 
+a) La media de estos datos es: ____  b) La varianza de estos datos es: ____  c) La desviación estándar es: ____
+
+3. Si a partir de los datos del punto anterior, obtenemos unos nuevos datos multiplicándolos por `r a` y sumándole `r b`, la varianza de estos nuevos datos es: ____  
